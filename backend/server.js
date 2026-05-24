@@ -18,6 +18,4 @@ app.get('/api/reviews', (req, res) => {
   res.json(reviews);
 });
 
-app.listen(PORT, () => {
-  console.log(`Backend server running on http://localhost:${PORT}`);
-});
+module.exports = app;
