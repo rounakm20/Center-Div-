@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "framer-motion": "^12.39.0",
+    "ogl": "^1.0.11"
+  }
+}
