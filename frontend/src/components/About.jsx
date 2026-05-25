@@ -187,26 +187,27 @@ const teamMembers = [
   {
     name: "Rounak Mishra",
     title: "Founder & CEO",
-    instagram: "https://instagram.com/YOUR_HANDLE",
-    linkedin: "https://linkedin.com/in/YOUR_HANDLE",
-    
+    instagram: "https://www.instagram.com/_rounak.m/",
+    linkedin: "https://www.linkedin.com/in/rounakm9636",
+    email: "rounakm5886@gmail.com",
     photo: "/images/Rounak.png",
     initials: "RM",
   },
   {
     name: "Neeraj Chauhan",
     title: "Managing Director",
-    instagram: "https://instagram.com/YOUR_HANDLE",
-    linkedin: "https://linkedin.com/in/YOUR_HANDLE",
-    
+    instagram: "https://www.instagram.com/neeraj_iv/",
+    linkedin: "https://www.linkedin.com/in/neeraj-ch7",
+    email: "ncs7704@gmail.com",
     photo: "/images/Neeraj.png",
     initials: "NC",
   },
   {
     name: "Vinay Dhiman",
     title: "Chief Technology Officer",
-    instagram: "https://instagram.com/YOUR_HANDLE",
-    linkedin: "https://linkedin.com/in/YOUR_HANDLE",
+    instagram: "https://www.instagram.com/_whovinay_/",
+    linkedin: "https://www.linkedin.com/in/vinay-dhiman-36996731b/",
+    email: "vinaydhiman289@gmail.com",
     photo: "/images/Vinay.png",
     initials: "VD",
   },
@@ -367,7 +368,7 @@ function TeamCard({ member, index }) {
 
                 {/* Email */}
                 <a
-                  href="mailto:centerdiv.studio@gmail.com"
+                  href={`mailto:${member.email}`}
                   style={{
                     display: "flex", alignItems: "center", justifyContent: "center",
                     width: "52px", height: "52px", borderRadius: "50%",
