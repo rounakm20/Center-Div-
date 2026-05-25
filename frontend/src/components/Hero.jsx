@@ -462,6 +462,8 @@ const Hero = () => {
   const subtitleRef  = useRef(null);
   const buttonsRef   = useRef(null);
   const glowRef      = useRef(null);
+  // FIX 1: Added ref for badge element
+  const badgeRef     = useRef(null);
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
@@ -481,7 +483,8 @@ const Hero = () => {
 
       const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
-      tl.fromTo('.badge',
+      // FIX 1: Use ref instead of class selector for badge
+      tl.fromTo(badgeRef.current,
         { y: 30, opacity: 0 },
         { y: 0, opacity: 1, duration: 1, delay: 0.3 }
       )
@@ -512,6 +515,9 @@ const Hero = () => {
     return () => ctx.revert();
   }, []);
 
+  // FIX 2: Inline SVG noise — no external URL needed
+  const noiseSvg = `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`;
+
   return (
     <>
       <section
@@ -541,10 +547,12 @@ const Hero = () => {
             ref={glowRef}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/20 rounded-full blur-[120px] opacity-50"
           />
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
+         
         </div>
 
         <div className="relative z-20 max-w-6xl mx-auto px-6 text-center flex flex-col items-center">
+
+          
 
           <div className="brand-name-char relative inline-block" style={{ perspective: '1200px' }} aria-label="CENTREDIV Studios">
             <div style={{ lineHeight: 0.88, display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
