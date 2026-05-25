@@ -205,7 +205,9 @@ const allReviews = [...indianReviews, ...indianReviews];
 
 const Reviews = () => {
   return (
-    <section style={{ background: '#0a0906', padding: '48px 0 40px', overflow: 'hidden', position: 'relative', minHeight: '100vh', boxSizing: 'border-box' }}>
+    <section 
+    id="reviews"
+    style={{ background: '#0a0906', padding: '48px 0 40px', overflow: 'hidden', position: 'relative', minHeight: '100vh', boxSizing: 'border-box' }}>
       <style>{FONTS + KF}</style>
 
       {/* Header */}
